@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Category extends Model
 {
     use HasFactory, SoftDeletes;
+
+    // 1 kategóriába több recept tartozik:
+    public function recipes(){
+        return $this->hasMany(Recipe::class);
+    }
 }

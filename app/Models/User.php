@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // 1 usernek több receptje lehet:
+    public function recipes(){
+        return $this->hasMany(Recipe::class);
+    }
 }

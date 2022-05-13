@@ -9,4 +9,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Recipe extends Model
 {
     use HasFactory, SoftDeletes;
+
+    // 1 recept 1 kategóriához tartozik:
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
+    // 1 recept 1 userhez tartozik:
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

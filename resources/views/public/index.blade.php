@@ -1,7 +1,6 @@
 @extends('public.layout')
 
 @section('content')
-    <h3>Itt lesznek a kategóriákba rendezett receptek</h3>
 
     <hr>
 
@@ -12,5 +11,26 @@
         Regisztráció
     </a>
 
+    <h3>Kategóriák:</h3>
+
+    <table>
+        @foreach($categories as $category)
+        <tr>
+            <td></td>
+            <td>
+                <a href="{{ route('public.show', ['id' => $category->id]) }}">
+                    {{ $category->name }}
+                </a>
+            </td>
+        </tr>
+        @endforeach
+    </table>
+   {{--
+    <ul>
+        @foreach($recipes as $recipe)
+            <li>{{ $recipe->name }}</li>
+        @endforeach
+    </ul>
+    --}}
 @endsection
 
