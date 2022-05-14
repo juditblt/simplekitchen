@@ -15,7 +15,12 @@
 
     <ul>
         @foreach($recipes as $recipe)
-            <li>{{ $recipe->name }}</li>
+            <li>
+                <a href="{{ route('public.details', ['id' => $recipe->id]) }}">
+                    {{ $recipe->name }}
+                </a>
+                {{ $recipe->name }}
+            </li>
         @endforeach
     </ul>
 

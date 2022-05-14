@@ -25,4 +25,14 @@ class PublicController extends Controller
             'recipes' => $recipes
         ]);
     }
+
+    public function details($id){
+        $recipes = Recipe::where([
+            ['id', $id],
+            ['public', 1]
+        ])->get();
+        return view('public.details', [
+           'recipes' => $recipes
+        ]);
+    }
 }

@@ -12,7 +12,6 @@
     </a>
 
     <h3>Kategóriák:</h3>
-
     <table>
         @foreach($categories as $category)
         <tr>
@@ -25,12 +24,6 @@
         </tr>
         @endforeach
     </table>
-   {{--
-    <ul>
-        @foreach($recipes as $recipe)
-            <li>{{ $recipe->name }}</li>
-        @endforeach
-    </ul>
-    --}}
+
 @endsection
 
