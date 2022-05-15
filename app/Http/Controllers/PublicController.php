@@ -14,18 +14,6 @@ class PublicController extends Controller
         ]);
     }
 
-    public function show($id){
-        $category = Category::find($id);
-        $recipes = Recipe::where([
-            ['category_id', $id],
-            ['public', 1]
-        ])->get();
-        return view('public.show', [
-            'category' => $category,
-            'recipes' => $recipes
-        ]);
-    }
-
     public function details($id){
         $recipes = Recipe::where([
             ['id', $id],

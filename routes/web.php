@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class, 'index'])->name('public.index');
-Route::get('/show{id}', [PublicController::class, 'show'])->name('public.show');
 Route::get('details{id}', [PublicController::class, 'details'])->name('public.details');
 
 Route::get('/home', [PrivateController::class, 'home'])

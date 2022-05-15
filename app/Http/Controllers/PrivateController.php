@@ -16,7 +16,6 @@ class PrivateController extends Controller
         //var_dump($recipes);
         return view('private.home', [
             'user' => $user,
-            'categories' => Category::all(),
             'recipes' => $recipes
         ]);
     }
