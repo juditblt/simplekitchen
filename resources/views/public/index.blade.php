@@ -29,11 +29,13 @@
             <td>
                 <ul>
                 @foreach($category->recipes as $recipe)
+                    @if($recipe->public == 1)
                     <li>
                         <a href="{{ route('public.details', ['id' => $recipe->id]) }}">
                             {{ $recipe->name }}
                         </a>
                     </li>
+                    @endif
                 @endforeach
                 </ul>
             </td>
