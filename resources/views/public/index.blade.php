@@ -1,16 +1,6 @@
 @extends('public.layout')
 
 @section('content')
-    <hr>
-
-    <a href="{{ route('login') }}">
-        Belépés
-    </a>
-    <a href="{{ route('register') }}">
-        Regisztráció
-    </a>
-
-    <hr>
 
     <h3>Az oldalon elérhető receptek</h3>
 

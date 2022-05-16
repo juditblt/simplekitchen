@@ -16,7 +16,7 @@
     </form>
 
     @section('content')
-        private/home oldal tartalma...
+        private oldal tartalma...
     @show
 </body>
 </html>

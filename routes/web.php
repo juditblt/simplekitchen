@@ -20,6 +20,9 @@ Route::get('details{id}', [PublicController::class, 'details'])->name('public.de
 
 Route::get('/home', [PrivateController::class, 'home'])
     ->name('private.home')->middleware(['auth']);
+Route::get('details{id}', [PrivateController::class, 'details'])
+    ->name('private.details')->middleware(['auth']);
+
 Route::get('/create', [PrivateController::class, 'create'])
     ->name('private.create')->middleware('auth');
 Route::post('/create', [PrivateController::class, 'store'])

@@ -15,8 +15,19 @@
         <input type="submit" value="Kilépés">
     </form>
 
+    <hr>
+
+    <a href="{{ route('login') }}">
+        Belépés
+    </a>
+    <a href="{{ route('register') }}">
+        Regisztráció
+    </a>
+
+    <hr>
+
     @section('content')
-        public/index oldal tartalma...
+        public oldal tartalma...
     @show
 </body>
 </html>

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PrivateController extends Controller
 {
+    // a bejelentkezett user receptjei a home nézeten
     public function home(){
         $user = Auth::user();
         $recipes = $user->recipes;
@@ -21,6 +22,20 @@ class PrivateController extends Controller
         ]);
     }
 
+    // ez még nincs kész!!
+    public function details($id){
+        $user = Auth::user();
+        $recipes = $user->recipes->where([
+            'id'=> $id
+        ]);
+        return view('private.details', [
+            'user' => $user,
+            'recipes' => $recipes,
+            'id' => $id
+        ]);
+    }
+
+    // create nézetet adja vissza
     public function create(){
         return view('private.create', [
             'user' => Auth::user() ,
@@ -28,6 +43,7 @@ class PrivateController extends Controller
         ]);
     }
 
+    // a beírt adatok bekerülnek egy új receptként az adatbázisba
     public function store(RecipeCreatePostRequest $request){
         $recipe = new Recipe();
         $recipe->user_id = Auth::id();
