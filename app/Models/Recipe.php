@@ -19,4 +19,10 @@ class Recipe extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    // Many To Many kapcsolathoz
+    public function ingredients(){
+        return $this->belongsToMany(Ingredient::class, 'r__ingredients', 'recipe_id', 'ingredient_id')
+            ->withPivot('quantity', 'unit');
+    }
 }

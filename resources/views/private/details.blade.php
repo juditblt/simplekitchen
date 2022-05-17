@@ -16,6 +16,7 @@
             <th>Recept név</th>
             <th>Leírás</th>
             <th>Publ(1)/Priv(0)</th>
+            <th>Hozzávalók</th>
             <th>Törlés</th>
         </tr>
             <tr>
@@ -23,6 +24,13 @@
                 <td>{{ $recipe->name }}</td>
                 <td>{{ $recipe->description }}</td>
                 <td>{{ $recipe->public }}</td>
+                <td>
+                    <ul>
+                        @foreach($recipe->ingredients as $ingredient)
+                            <li>{{ $ingredient->pivot->quantity }} {{ $ingredient->pivot->unit }} {{ $ingredient->name }}</li>
+                        @endforeach
+                    </ul>
+                </td>
                 <td>
                     <form action="{{ route('private.delete', ['id' => $recipe->id]) }}" method="post">
                         @csrf

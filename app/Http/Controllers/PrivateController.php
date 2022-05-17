@@ -40,7 +40,7 @@ class PrivateController extends Controller
         ]);
     }
 
-    // a szerkesztett recept mentése az adatbázisba - még nincs kész teljesen!!
+    // a szerkesztett recept mentése az adatbázisba
     public function update(RecipeUpdatePostRequest $request){
         $recipe = Recipe::find($request->id);
         $recipe->name = $request->name;

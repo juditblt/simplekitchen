@@ -28,10 +28,27 @@
         </textarea>
         <br>
         <br>
-        <label for="public">Publikus</label>
-        <input type="radio" name="public" id="public" value={{ $recipe->public }}>
-        <label for="public">Privát</label>
-        <input type="radio" name="public" id="private" value={{ $recipe->public }}>
+        Láthatóság: Priv(0)/Publ(1)
+        <br>
+
+        @for($i = 0; $i < 2; $i++)
+            @if($recipe->public == $i)
+                <input type="radio" name="public" id="public-{{$i}}" value="{{ $i }}">
+            @else
+                <input type="radio" name="public" id="private-{{$i}}" value="{{ $i }}">
+            @endif
+                <label for="public-{{$i}}">{{ $i }}</label>
+        @endfor
+        <br>
+        <br>
+        <label for="ingredient">Hozzávalók:</label>
+        <select name="ingredient" id="ingredient">
+            @foreach($recipe->ingredients as $ingredient)
+                <option value="{{ $ingredient->name }}">
+                    {{ $ingredient->name }}
+                </option>
+            @endforeach
+        </select>
         <br>
         <br>
 
