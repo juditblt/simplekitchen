@@ -30,6 +30,7 @@
         <br>
         Láthatóság: Priv(0)/Publ(1)
         <br>
+        <br>
 
         @for($i = 0; $i < 2; $i++)
             @if($recipe->public == $i)
@@ -49,6 +50,7 @@
                 </option>
             @endforeach
         </select>
+        <br>
         <br>
         <br>
 

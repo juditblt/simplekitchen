@@ -28,7 +28,7 @@
                 </td>
             </tr>
     </table>
-
+    <br>
     <hr>
 
     <a href="{{ route('public.index') }}">
