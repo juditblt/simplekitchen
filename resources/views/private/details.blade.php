@@ -4,7 +4,7 @@
 
     <hr>
 
-    <h2>Üdvözöljük "{{ $user->name }}" ( {{ $user->email }} )!</h2>
+    <h2>Üdvözöljük "{{ $recipe->user->name }}" ( {{ $recipe->user->email }} )!</h2>
     <hr>
 
     <h3>A kiválasztott recept részletei:</h3>
@@ -16,18 +16,29 @@
             <th>Recept név</th>
             <th>Leírás</th>
             <th>Publ(1)/Priv(0)</th>
-
+            <th>Törlés</th>
         </tr>
-        @foreach($recipes as $recipe)
             <tr>
                 <td>{{ $recipe->category->name }}</td>
                 <td>{{ $recipe->name }}</td>
                 <td>{{ $recipe->description }}</td>
                 <td>{{ $recipe->public }}</td>
-
+                <td>
+                    <form action="{{ route('private.delete', ['id' => $recipe->id]) }}" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $recipe->id }}">
+                        <input type="submit" value="Törlés">
+                    </form>
+                </td>
             </tr>
-        @endforeach
     </table>
+    <br>
+    <br>
+
+    <a href="{{ route('private.edit', ['id' => $recipe->id]) }}">
+        Szerkesztés
+    </a>
+    <br>
 
     <hr>
 

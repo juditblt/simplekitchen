@@ -19,9 +19,10 @@
             <td>
                 <ul>
                 @foreach($category->recipes as $recipe)
+                    {{-- Feltétel: csak a publikus receptek legyenek itt: --}}
                     @if($recipe->public == 1)
                     <li>
-                        <a href="{{ route('public.details', ['id' => $recipe->id]) }}">
+                        <a href="{{ route('public.show', ['id' => $recipe->id]) }}">
                             {{ $recipe->name }}
                         </a>
                     </li>

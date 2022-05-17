@@ -16,12 +16,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class, 'index'])->name('public.index');
-Route::get('details{id}', [PublicController::class, 'details'])->name('public.details');
+Route::get('/show/{id}', [PublicController::class, 'show'])->name('public.show');
 
 Route::get('/home', [PrivateController::class, 'home'])
-    ->name('private.home')->middleware(['auth']);
-Route::get('details{id}', [PrivateController::class, 'details'])
-    ->name('private.details')->middleware(['auth']);
+    ->name('private.home')->middleware('auth');
+Route::get('/details/{id}', [PrivateController::class, 'details'])
+    ->name('private.details')->middleware('auth');
+
+Route::get('/edit/{id}', [PrivateController::class, 'edit'])
+    ->name('private.edit')->middleware('auth');
+Route::post('/edit/{id}', [PrivateController::class, 'update'])
+    ->name('private.update')->middleware('auth');
+
+Route::post('/delete/{id}', [PrivateController::class, 'delete'])
+    ->name('private.delete')->middleware('auth');
 
 Route::get('/create', [PrivateController::class, 'create'])
     ->name('private.create')->middleware('auth');

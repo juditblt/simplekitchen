@@ -15,14 +15,11 @@ class PublicController extends Controller
         ]);
     }
 
-    // publikus receptek adatai a details nézeten
-    public function details($id){
-        $recipes = Recipe::where([
-            ['id', $id],
-            ['public', 1]
-        ])->get();
-        return view('public.details', [
-           'recipes' => $recipes
+    // publikus receptek adatai a show nézeten
+    public function show($id){
+        $recipe = Recipe::find($id);
+        return view('public.show', [
+           'recipe' => $recipe
         ]);
     }
 }
