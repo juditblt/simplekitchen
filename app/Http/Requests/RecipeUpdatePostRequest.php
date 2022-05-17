@@ -22,6 +22,7 @@ class RecipeUpdatePostRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
+    // szerkesztéshez
     public function rules()
     {
         return [

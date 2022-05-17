@@ -47,6 +47,7 @@ class PrivateController extends Controller
         $recipe->description = $request->description;
         $recipe->public = $request->public;
         $recipe->save();
+
         return redirect()->route('private.home');
     }
 

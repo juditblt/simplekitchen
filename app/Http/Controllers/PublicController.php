@@ -15,7 +15,7 @@ class PublicController extends Controller
         ]);
     }
 
-    // publikus receptek adatai a show nézeten
+    // publikus receptek adatai a show nézeten (hozzávalók is)
     public function show($id){
         $recipe = Recipe::find($id);
         return view('public.show', [
