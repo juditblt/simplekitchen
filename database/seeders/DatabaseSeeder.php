@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,19 +18,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('recipes') ->insert([
-            'user_id' => 1,
-            'category_id' => 2,
-            'name' => "rakott kel",
-            'description' => Str::random(30),
-            'public' => 1
+        $this->call([
+            UserSeeder::class,
+            CategorySeeder::class,
+            IngredientSeeder::class,
+            RecipeSeeder::class,
+            R_IngredientSeeder::class
         ]);
-        DB::table('categories') ->insert([
-            'name' => 'leves'
-        ]);
-        DB::table('categories') ->insert([
-            'name' => 'egytálétel'
-        ]);
+
         // \App\Models\User::factory(10)->create();
     }
 }
