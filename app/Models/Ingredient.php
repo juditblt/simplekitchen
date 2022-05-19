@@ -12,7 +12,7 @@ class Ingredient extends Model
 
     // Many To Many kapcsolat
     public function recipes(){
-        return $this->belongsToMany(Ingredient::class, 'r__ingredients', 'ingredient_id', 'recipe_id')
+        return $this->belongsToMany(Recipe::class, 'r__ingredients', 'ingredient_id', 'recipe_id')
             ->withPivot('quantity', 'unit');
     }
 }

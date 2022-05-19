@@ -9,10 +9,11 @@ use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
-    // index nézeten kategóriák, elérhetőek a hozzájuk tartozó receptek is
+    // index nézeten kategóriák, és összetevők, ezek alapján elérhetőek a receptek
     public function index(){
         return view('public.index', [
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'ingredients' => Ingredient::all()
         ]);
     }
 
