@@ -2,6 +2,11 @@
 
 @section('content')
 
+    <hr>
+
+    <a href="{{ route('admin.categories.create') }}">Új kategória felvétele</a>
+    <hr>
+
     <h3>A 'simplekitchen' alkalmazás ételkategóriái</h3>
 
     <table>
