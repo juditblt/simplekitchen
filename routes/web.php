@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\PrivateController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
@@ -37,11 +38,16 @@ Route::get('/create', [PrivateController::class, 'create'])
 Route::post('/create', [PrivateController::class, 'store'])
     ->name('private.store')->middleware('auth');
 
+
+
 Route::get('/admin/categories', [CategoryController::class, 'index'])
     ->name('admin.categories')->middleware('auth');
 Route::get('/admin/categories/create', [CategoryController::class, 'create'])
     ->name('admin.categories.create')->middleware('auth');
 Route::post('/admin/categories/create', [CategoryController::class, 'store'])
     ->name('admin.categories.store')->middleware('auth');
+
+Route::get('/admin/ingredients', [IngredientController::class, 'index'])
+    ->name('admin.ingredients')->middleware('auth');
 
 require __DIR__.'/auth.php';
