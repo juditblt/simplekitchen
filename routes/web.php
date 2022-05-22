@@ -49,5 +49,9 @@ Route::post('/admin/categories/create', [CategoryController::class, 'store'])
 
 Route::get('/admin/ingredients', [IngredientController::class, 'index'])
     ->name('admin.ingredients')->middleware('auth');
+Route::get('/admin/ingredients/add', [IngredientController::class, 'add'])
+    ->name('admin.ingredients.add')->middleware('auth');
+Route::post('/admin/ingredients/add', [IngredientController::class, 'store'])
+    ->name('admin.ingredients.store')->middleware('auth');
 
 require __DIR__.'/auth.php';

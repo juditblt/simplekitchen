@@ -6,7 +6,7 @@
     <h3>Itt hozhat létre új kategóriát:</h3>
     <hr>
 
-    <form action="{{ route('admin.categories.create') }}" method="post">
+    <form action="{{ route('admin.categories.store') }}" method="post">
         @csrf
 
         <label for="category">Kategória:</label>

@@ -4,7 +4,7 @@
 
     <hr>
 
-    <a href="">Új hozzávaló felvétele</a>
+    <a href="{{ route('admin.ingredients.add') }}">Új hozzávaló felvétele</a>
     <hr>
 
     <h3>A 'simplekitchen' alkalmazás recept-hozzávalói</h3>
@@ -12,7 +12,7 @@
     <table>
         <tr>
             <th></th>
-            <th>hozzávalók</th>
+            <th>Hozzávalók</th>
             <th></th>
             <th>Receptek</th>
         </tr>
