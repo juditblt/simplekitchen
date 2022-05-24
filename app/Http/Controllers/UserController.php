@@ -12,4 +12,12 @@ class UserController extends Controller
             'users' => User::all()
         ]);
     }
+
+    public function delete(){
+
+    }
+
+    public function promote(){
+
+    }
 }
