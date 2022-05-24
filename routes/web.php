@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\PrivateController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,5 +54,8 @@ Route::get('/admin/ingredients/add', [IngredientController::class, 'add'])
     ->name('admin.ingredients.add')->middleware('auth');
 Route::post('/admin/ingredients/add', [IngredientController::class, 'store'])
     ->name('admin.ingredients.store')->middleware('auth');
+
+Route::get('/admin/users', [UserController::class, 'index'])
+    ->name('admin.users')->middleware('auth');
 
 require __DIR__.'/auth.php';
