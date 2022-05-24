@@ -57,5 +57,9 @@ Route::post('/admin/ingredients/add', [IngredientController::class, 'store'])
 
 Route::get('/admin/users', [UserController::class, 'index'])
     ->name('admin.users')->middleware('auth');
+Route::post('/admin/users/delete', [UserController::class, 'delete'])
+    ->name('admin.users.delete')->middleware('auth');
+Route::post('/admin/users/promote', [UserController::class, 'promote'])
+    ->name('admin.users.promote')->middleware('auth');
 
 require __DIR__.'/auth.php';
