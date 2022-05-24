@@ -42,24 +42,24 @@ Route::post('/create', [PrivateController::class, 'store'])
 
 
 Route::get('/admin/categories', [CategoryController::class, 'index'])
-    ->name('admin.categories')->middleware('auth');
+    ->name('admin.categories')->middleware('role:admin');
 Route::get('/admin/categories/create', [CategoryController::class, 'create'])
-    ->name('admin.categories.create')->middleware('auth');
+    ->name('admin.categories.create')->middleware('role:admin');
 Route::post('/admin/categories/create', [CategoryController::class, 'store'])
-    ->name('admin.categories.store')->middleware('auth');
+    ->name('admin.categories.store')->middleware('role:admin');
 
 Route::get('/admin/ingredients', [IngredientController::class, 'index'])
-    ->name('admin.ingredients')->middleware('auth');
+    ->name('admin.ingredients')->middleware('role:admin');
 Route::get('/admin/ingredients/add', [IngredientController::class, 'add'])
-    ->name('admin.ingredients.add')->middleware('auth');
+    ->name('admin.ingredients.add')->middleware('role:admin');
 Route::post('/admin/ingredients/add', [IngredientController::class, 'store'])
-    ->name('admin.ingredients.store')->middleware('auth');
+    ->name('admin.ingredients.store')->middleware('role:admin');
 
 Route::get('/admin/users', [UserController::class, 'index'])
-    ->name('admin.users')->middleware('auth');
+    ->name('admin.users')->middleware('role:admin');
 Route::post('/admin/users/delete', [UserController::class, 'delete'])
-    ->name('admin.users.delete')->middleware('auth');
+    ->name('admin.users.delete')->middleware('role:admin');
 Route::post('/admin/users/promote', [UserController::class, 'promote'])
-    ->name('admin.users.promote')->middleware('auth');
+    ->name('admin.users.promote')->middleware('role:admin');
 
 require __DIR__.'/auth.php';
