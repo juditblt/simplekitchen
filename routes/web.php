@@ -39,7 +39,9 @@ Route::get('/create', [PrivateController::class, 'create'])
 Route::post('/create', [PrivateController::class, 'store'])
     ->name('private.store')->middleware('auth');
 
-
+Route::get('/admin', function (){
+    return view('admin.index');
+})->name('admin')->middleware('role:admin');
 
 Route::get('/admin/categories', [CategoryController::class, 'index'])
     ->name('admin.categories')->middleware('role:admin');
