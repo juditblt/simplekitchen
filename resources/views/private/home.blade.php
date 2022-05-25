@@ -7,6 +7,11 @@
     <h2>Üdvözöljük "{{ $user->name }}" ( {{ $user->email }} )!</h2>
     <hr>
 
+    @if($user->role == 'admin')
+        <a href="{{ route('admin') }}">Adminisztrátor kezdő oldal</a>
+    @endif
+
+    <hr>
     <a href="{{ route('private.create') }}">Új recept felvétele</a>
     <hr>
 
