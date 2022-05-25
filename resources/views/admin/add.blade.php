@@ -2,9 +2,7 @@
 
 @section('content')
     <hr>
-
     <h3>Itt hozhat létre új hozzávalót:</h3>
-    <hr>
 
     <form action="{{ route('admin.ingredients.store') }}" method="post">
         @csrf
@@ -15,5 +13,8 @@
         <br>
         <input type="submit" value="Elküld">
     </form>
+
+    <hr>
+    <a href="{{ route('admin.ingredients') }}">Vissza</a>
 
 @endsection
