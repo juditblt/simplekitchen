@@ -1,12 +1,10 @@
 @extends('admin.layout')
 
 @section('content')
-
     <hr>
-
     <a href="{{ route('admin.ingredients.add') }}">Új hozzávaló felvétele</a>
+    <a href="{{ route('admin') }}">Vissza</a>
     <hr>
-
     <h3>A 'simplekitchen' alkalmazás recept-hozzávalói</h3>
 
     <table>

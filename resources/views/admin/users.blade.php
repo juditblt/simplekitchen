@@ -1,12 +1,9 @@
 @extends('admin.layout')
 
 @section('content')
-
     <hr>
-
-    <a href=""></a>
+    <a href="{{ route('admin') }}">Vissza</a>
     <hr>
-
     <h3>A 'simplekitchen' alkalmazás felhasználói</h3>
 
     <table>

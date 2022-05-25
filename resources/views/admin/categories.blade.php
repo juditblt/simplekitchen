@@ -1,12 +1,10 @@
 @extends('admin.layout')
 
 @section('content')
-
     <hr>
-
     <a href="{{ route('admin.categories.create') }}">Új kategória felvétele</a>
+    <a href="{{ route('admin') }}">Vissza</a>
     <hr>
-
     <h3>A 'simplekitchen' alkalmazás ételkategóriái</h3>
 
     <table>
@@ -31,7 +29,5 @@
             </tr>
         @endforeach
     </table>
-
-
 
 @endsection
