@@ -6,6 +6,8 @@ use App\Http\Requests\RecipeCreatePostRequest;
 use App\Http\Requests\RecipeDeletePostRequest;
 use App\Http\Requests\RecipeUpdatePostRequest;
 use App\Models\Category;
+use App\Models\Ingredient;
+use App\Models\R_Ingredient;
 use App\Models\Recipe;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -46,6 +48,13 @@ class PrivateController extends Controller
         $recipe->name = $request->name;
         $recipe->description = $request->description;
         $recipe->public = $request->public;
+
+        $ingredient = $recipe->ingredients;
+        $n = count($request->ingr_id);
+        for ($i = 0; $i < $n;$i++){
+            $ingredient->id[$i] = $request->ingr_id[$i];
+            $ingredient->quantity[$i] = $request->quantity[$i];
+        }
         $recipe->save();
 
         return redirect()->route('private.home');

@@ -30,6 +30,8 @@
         <br>
         Láthatóság: Priv(0)/Publ(1)
         <br>
+        Kötelező bejelölni!
+        <br>
         <br>
 
         @for($i = 0; $i < 2; $i++)
@@ -42,15 +44,24 @@
         @endfor
         <br>
         <br>
-        <label for="ingredient">Hozzávalók:</label>
-        <select name="ingredient" id="ingredient">
-            @foreach($recipe->ingredients as $ingredient)
-                <option value="{{ $ingredient->name }}">
-                    {{ $ingredient->name }}
-                </option>
-            @endforeach
-        </select>
+        Hozzávalók:
         <br>
+        <br>
+        <table>
+            <tr>
+                <th>Hozzávaló</th>
+                <th>Mennyiség</th>
+                <th>Egység</th>
+            </tr>
+            @foreach($recipe->ingredients as $ingredient)
+            <tr>
+                <input type="hidden" name="ingr_id[]" value="{{ $ingredient->id }}">
+                <td>{{ $ingredient->name }}</td>
+                <td><input type="number" name="quantity[]" id="quantity" value="{{ $ingredient->pivot->quantity }}"></td>
+                <td>{{ $ingredient->pivot->unit }}</td>
+            </tr>
+            @endforeach
+        </table>
         <br>
         <br>
 
