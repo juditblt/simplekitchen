@@ -40,6 +40,11 @@
         <input type="submit" value="Elküld">
     </form>
 
+    <hr>
+
+    <a href="{{ route('private.home') }}">
+        Vissza
+    </a>
 
 
 @endsection
