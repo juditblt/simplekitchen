@@ -74,7 +74,8 @@ class PrivateController extends Controller
     public function create(){
         return view('private.create', [
             'user' => Auth::user() ,
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'ingredients' => Ingredient::all()
         ]);
     }
 
@@ -86,6 +87,7 @@ class PrivateController extends Controller
         $recipe->name = $request->name;
         $recipe->description = $request->description;
         $recipe->public = $request->public;
+        $recipe->ingredients->ingredient_id = $request->ingredient_id;
         $recipe->save();
 
         return redirect()->route('private.home');

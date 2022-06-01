@@ -23,6 +23,7 @@
         </select>
         <br>
         <br>
+
         <label for="name">Étel neve:</label>
         <input type="text" name="name" id="name" size="50">
         <br>
@@ -37,6 +38,21 @@
         <input type="radio" name="public" id="private" value="0">
         <br>
         <br>
+
+        <label for="ingredient">Kategória:</label>
+        (Ctrl + kattintással többet is választhat!)
+        <br>
+        <br>
+        <select name="ingredient_id" id="ingredient" multiple>
+            @foreach($ingredients as $ingredient)
+            <option value="{{ $ingredient->id  }}">
+                {{$ingredient->name}}
+            </option>
+            @endforeach
+        </select>
+        <br>
+        <br>
+
         <input type="submit" value="Elküld">
     </form>
 
