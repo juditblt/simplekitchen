@@ -47,6 +47,7 @@
         Hozzávalók:
         <br>
         <br>
+
         <table>
             <tr>
                 <th>Hozzávaló</th>
@@ -55,7 +56,7 @@
             </tr>
             @foreach($recipe->ingredients as $ingredient)
             <tr>
-                <input type="hidden" name="ingr_id[]" value="{{ $ingredient->id }}">
+                <input type="hidden" name="ingr_id[]" value="{{ $ingredient->pivot->recipe_id }}">
                 <td>{{ $ingredient->name }}</td>
                 <td><input type="number" name="quantity[]" id="quantity" value="{{ $ingredient->pivot->quantity }}"></td>
                 <td>{{ $ingredient->pivot->unit }}</td>

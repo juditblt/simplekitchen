@@ -49,12 +49,14 @@ class PrivateController extends Controller
         $recipe->description = $request->description;
         $recipe->public = $request->public;
 
+        /*
         $ingredient = $recipe->ingredients;
-        $n = count($request->ingr_id);
+        $n = count($ingredient);
         for ($i = 0; $i < $n;$i++){
-            $ingredient->id[$i] = $request->ingr_id[$i];
-            $ingredient->quantity[$i] = $request->quantity[$i];
+            $ingredient->pivot->recipe_id[$i] = $request->ingr_id[$i];
+            $ingredient->pivot->quantity[$i] = $request->quantity[$i];
         }
+        */
         $recipe->save();
 
         return redirect()->route('private.home');
