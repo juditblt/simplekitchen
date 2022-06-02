@@ -10,30 +10,36 @@
     <title>Simplekitchen</title>
 </head>
 <body>
-    <h1>Egyszerű receptek</h1>
+    <main class="container">
+        <h1 class="row justify-content-center m-4">Egyszerű receptek</h1>
 
-    <form action="{{ route('logout') }}" method="post">
-        @csrf
-        <input type="submit" value="Kilépés">
-    </form>
+        <section class="row justify-content-center">
+            <div class="col-2">
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <input class="btn btn-info" type="submit" value="Kilépés">
+                </form>
+            </div>
+            <div class="col-2">
+                <a class="btn btn-info" href="{{ route('login') }}">
+                    Belépés
+                </a>
+            </div>
+            <div class="col-2">
+                <a class="btn btn-info" href="{{ route('register') }}">
+                    Regisztráció
+                </a>
+            </div>
+        </section>
 
-    <hr>
 
-    <a href="{{ route('login') }}">
-        Belépés
-    </a>
-    <a href="{{ route('register') }}">
-        Regisztráció
-    </a>
+        @section('content')
+            public oldal tartalma...
+        @show
 
-    <hr>
-
-    @section('content')
-        public oldal tartalma...
-    @show
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+    </main>
 </body>
 </html>
