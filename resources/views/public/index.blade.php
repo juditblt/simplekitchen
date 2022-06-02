@@ -3,7 +3,7 @@
 @section('content')
     <hr>
     <section class="row justify-content-center">
-        <div class="col-4">
+        <div class="col-5">
             <h3 class="">Az oldalon elérhető receptek</h3>
             <table class="table">
                 <tr>
@@ -31,7 +31,7 @@
                 @endforeach
             </table>
         </div>
-        <div class="col-4">
+        <div class="col-5">
             <h3 class="">A receptek összetevők szerint</h3>
             <table class="table">
                 <tr>
