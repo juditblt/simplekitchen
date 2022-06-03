@@ -3,10 +3,10 @@
 @section('content')
     <hr>
     <section class="row justify-content-center">
-        <div class="col-4">
+        <div class="col-sm-12 col-md-8">
             <h3>A kiválasztott recept leírása</h3>
 
-            <table class="table">
+            <table class="table table-sm">
                 <tr>
                     <th></th>
                     <th>Étel neve</th>
@@ -33,9 +33,9 @@
         </div>
     </section>
     <hr>
-    <section class="row justify-content-center">
-        <div class="col-4">
-            <a class="btn btn-info" href="{{ route('public.index') }}">
+    <section class="row">
+        <div class="col-sm-12 col-md-8 m-2">
+            <a class="btn btn-primary" href="{{ route('public.index') }}">
                 Vissza
             </a>
         </div>

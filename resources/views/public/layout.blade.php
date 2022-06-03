@@ -15,22 +15,26 @@
     <main class="container">
         <h1 class="row justify-content-center m-3">Egyszerű receptek</h1>
 
-        <section class="row justify-content-center">
-            <div class="col-2">
-                <a class="btn btn-info" href="{{ route('login') }}">
-                    Belépés
-                </a>
-            </div>
-            <div class="col-2">
-                <a class="btn btn-info" href="{{ route('register') }}">
-                    Regisztráció
-                </a>
-            </div>
-            <div class="col-2">
-                <form action="{{ route('logout') }}" method="post">
-                    @csrf
-                    <input class="btn btn-info" type="submit" value="Kilépés">
-                </form>
+        <section class="row">
+            <div class="navbar navbar-expand-lg">
+                <ul class="navbar-nav">
+                    <li class="nav-item m-2">
+                        <a class="btn btn-primary" href="{{ route('login') }}">
+                            Belépés
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="btn btn-primary" href="{{ route('register') }}">
+                            Regisztráció
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <input class="btn btn-primary" type="submit" value="Kilépés">
+                        </form>
+                    </li>
+                </ul>
             </div>
         </section>
 
