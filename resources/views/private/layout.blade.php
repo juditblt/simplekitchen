@@ -14,18 +14,16 @@
     <main class="container">
         <h1 class="row justify-content-center m-3">Egyszerű receptek</h1>
 
-        <section class="row">
-            <div class="navbar navbar-expand-lg">
-                <ul class="navbar-nav">
-                    <li class="nav-item m-2">
-                        <form action="{{ route('logout') }}" method="post">
-                            @csrf
-                            <input class="btn btn-primary" type="submit" value="Kilépés">
-                        </form>
-                    </li>
-                </ul>
-            </div>
-        </section>
+        <nav class="row justify-content-center m-3">
+            <ul class="nav">
+                <li class="nav-item mx-auto">
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <input class="btn btn-primary" type="submit" value="Kilépés">
+                    </form>
+                </li>
+            </ul>
+        </nav>
 
         @section('content')
             private oldal tartalma...

@@ -28,8 +28,10 @@ class PrivateController extends Controller
 
     // kiválasztott recept adatai a details nézeten
     public function details($id){
+        $user = Auth::user();
         $recipe = Recipe::find($id);
         return view('private.details', [
+            'user' => $user,
             'recipe' => $recipe
         ]);
     }

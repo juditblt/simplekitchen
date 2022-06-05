@@ -2,37 +2,41 @@
 
 @section('content')
     <hr>
-    <section class="row">
-        <div class="col-sm-12 col-md-8 m-2">
-            <h2>Üdvözöljük "{{ $user->name }}" ( {{ $user->email }} )!</h2>
-
+    <nav class="row justify-content-center m-3">
+        <ul class="nav">
+            <li class="nav-item mx-auto">
+            <span class="navbar-brand fs-2 align-middle">Üdvözöljük "{{ $user->name }}" ( {{ $user->email }} )!</span>
+            </li>
+            <li class="nav-item mx-auto">
+                <a class="btn btn-primary" href="{{ route('private.create') }}">Új recept felvétele</a>
+            </li>
+            <li class="nav-item mx-auto">
             @if($user->role == 'admin')
                 <a class="btn btn-primary" href="{{ route('admin') }}">Adminisztrátor kezdő oldal</a>
             @endif
+            </li>
+        </ul>
+    </nav>
 
-
-            <a class="btn btn-primary" href="{{ route('private.create') }}">Új recept felvétele</a>
-        </div>
-    </section>
-
+    <hr>
     <section class="row justify-content-center">
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-8">
             <h3>Itt láthatja az összes receptjét:</h3>
 
             <table class="table table-sm">
                 <tr>
                     <th>Kategória név</th>
                     <th>Recept név</th>
-                    <th>Publ(1)/Priv(0)</th>
-                    <th>Részletek</th>
+                    <th class="text-center">Publ(1)/Priv(0)</th>
+                    <th class="text-center">Részletek</th>
                 </tr>
                 @foreach($recipes as $recipe)
                     <tr>
-                        <td>{{ $recipe->category->name }}</td>
-                        <td>{{ $recipe->name }}</td>
-                        <td>{{ $recipe->public }}</td>
-                        <td>
-                            <a href="{{ route('private.details', ['id' => $recipe->id]) }}">Részletek</a>
+                        <td class="align-middle">{{ $recipe->category->name }}</td>
+                        <td class="align-middle">{{ $recipe->name }}</td>
+                        <td class="text-center align-middle">{{ $recipe->public }}</td>
+                        <td class="text-center align-middle">
+                            <a class="btn btn-warning m-2" href="{{ route('private.details', ['id' => $recipe->id]) }}">Részletek</a>
                         </td>
                     </tr>
                 @endforeach
