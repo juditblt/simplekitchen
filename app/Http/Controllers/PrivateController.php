@@ -51,7 +51,7 @@ class PrivateController extends Controller
         $recipe = Recipe::find($request->id);
         $recipe->name = $request->name;
         $recipe->description = $request->description;
-        $recipe->public = $request->publ_priv;
+        $recipe->public = $request->public;
 
         /*
         $ingredient = $recipe->ingredients;

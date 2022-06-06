@@ -39,20 +39,18 @@
                     </textarea>
                 </div>
 
-                <div class="col-md-12 gy-2 form-group">
+                <div class="col-md-12 gy-2">
                     <span class="fs-6">Láthatóság: Priv(0)/Publ(1) /Kötelező bejelölni!/</span>
 
-                    <div class="form-check">
-                        <label for="priv" class="form-check-label">0</label>
-                        <input type="radio" class="form-check-input" name="publ_priv" id="priv" value="0"
-                        {{ $recipe->public == '0' ? 'checked' : '' }}>
-
-                    </div>
-                    <div class="form-check">
-                        <label for="publ" class="form-check-label">1</label>
-                        <input type="radio" class="form-check-input" name="publ-priv" id="publ" value="1"
-                        {{ $recipe->public == '1' ? 'checked' : '' }}>
-
+                    <div>
+                        @for($i = 0;$i < 2;$i++)
+                            @if($recipe->public == $i)
+                                <input type="radio" name="public" id="public-{{$i}}" value="{{$i}}">
+                            @else
+                                <input type="radio" name="public" id="private-{{$i}}" value="{{$i}}">
+                            @endif
+                                <label for="public-{{$i}}">{{$i}}</label>
+                        @endfor
                     </div>
                 </div>
 
