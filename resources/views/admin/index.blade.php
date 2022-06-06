@@ -1,15 +1,31 @@
 @extends('admin.layout')
 
 @section('content')
-
     <hr>
-    <h3>A 'simplekitchen' alkalmazás felhasználói</h3>
-    <a href="{{ route('admin.users') }}">Felhasználók</a>
+    <section class="row justify-content-center">
+        <div class="col-sm-12 col-md-8">
 
-    <h3>A 'simplekitchen' alkalmazás ételkategóriái</h3>
-    <a href="{{ route('admin.categories') }}">Ételkategóriák</a>
+            <table class="table table-sm">
+                <tr>
+                    <td class="text-center align-middle">A 'simplekitchen' alkalmazás felhasználói</td>
+                    <td class="text-center align-middle">
+                        <a class="btn btn-success m-2" href="{{ route('admin.users') }}">Felhasználók</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center align-middle">A 'simplekitchen' alkalmazás ételkategóriái</td>
+                    <td class="text-center align-middle">
+                        <a class="btn btn-success m-2" href="{{ route('admin.categories') }}">Ételkategóriák</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center align-middle">A 'simplekitchen' alkalmazás recept-hozzávalói</td>
+                    <td class="text-center align-middle">
+                        <a class="btn btn-success m-2" href="{{ route('admin.ingredients') }}">Hozzávalók</a>
+                    </td>
+                </tr>
+            </table>
 
-    <h3>A 'simplekitchen' alkalmazás recept-hozzávalói</h3>
-    <a href="{{ route('admin.ingredients') }}">Hozzávalók</a>
-
+        </div>
+    </section>
 @endsection

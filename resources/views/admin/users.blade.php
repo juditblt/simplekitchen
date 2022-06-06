@@ -2,39 +2,49 @@
 
 @section('content')
     <hr>
-    <a href="{{ route('admin') }}">Vissza</a>
+    <section class="row justify-content-center">
+        <div class="col-sm-12 col-md-8">
+            <h3>A 'simplekitchen' alkalmazás felhasználói</h3>
+
+            <table class="table table-sm">
+                <tr>
+                    <th>Név</th>
+                    <th>Email</th>
+                    <th class="text-center">Role</th>
+                    <th class="text-center">Adminná előléptet</th>
+                    <th class="text-center">Felhasználó törlése</th>
+                </tr>
+                @foreach($users as $user)
+                <tr>
+                    <td class="align-middle">{{ $user->name }}</td>
+                    <td class="align-middle">{{ $user->email }}</td>
+                    <td class="text-center align-middle">{{ $user->role }}</td>
+                    <td class="text-center align-middle">
+                        <form action="{{ route('admin.users.promote') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $user->id }}">
+                            <input class="btn btn-warning btn-sm" type="submit" value="Előléptet">
+                        </form>
+                    </td>
+                    <td class="text-center align-middle">
+                        <form action="{{ route('admin.users.delete') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $user->id }}">
+                            <input class="btn btn-danger btn-sm" type="submit" value="Töröl">
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
+    </section>
+
     <hr>
-    <h3>A 'simplekitchen' alkalmazás felhasználói</h3>
-
-    <table>
-        <tr>
-            <th>Név</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Adminná előléptet</th>
-            <th>Felhasználó törlése</th>
-        </tr>
-        @foreach($users as $user)
-        <tr>
-            <td>{{ $user->name }}</td>
-            <td>{{ $user->email }}</td>
-            <td>{{ $user->role }}</td>
-            <td>
-                <form action="{{ route('admin.users.promote') }}" method="post">
-                    @csrf
-                    <input type="hidden" name="id" value="{{ $user->id }}">
-                    <input type="submit" value="Előléptet">
-                </form>
-            </td>
-            <td>
-                <form action="{{ route('admin.users.delete') }}" method="post">
-                    @csrf
-                    <input type="hidden" name="id" value="{{ $user->id }}">
-                    <input type="submit" value="Töröl">
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </table>
-
+    <section class="row justify-content-center">
+        <div class="col-sm-12 col-md-10 m-2">
+            <a class="btn btn-primary m-2" href="{{ route('admin') }}">
+                Vissza
+            </a>
+        </div>
+    </section>
 @endsection
