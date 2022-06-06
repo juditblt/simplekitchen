@@ -20,7 +20,7 @@
 
     <hr>
     <section class="row justify-content-center">
-        <div class="col-sm-12 col-md-8">
+        <div class="col-sm-12 col-md-8 m-2">
             <h3>Itt láthatja az összes receptjét:</h3>
 
             <table class="table table-sm">

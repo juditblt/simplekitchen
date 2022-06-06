@@ -17,7 +17,7 @@
 
     <hr>
     <section class="row justify-content-center">
-        <div class="col-sm-12 col-md-8 m-2">
+        <div class="col-sm-12 col-md-10 m-2">
             <h3>A kiválasztott recept részletei:</h3>
 
             <table class="table table-sm">
@@ -33,9 +33,9 @@
                     <tr>
                         <td class="align-middle">{{ $recipe->category->name }}</td>
                         <td class="align-middle">{{ $recipe->name }}</td>
-                        <td class="align-middle">{{ $recipe->description }}</td>
+                        <td class="align-middle text-break">{{ $recipe->description }}</td>
                         <td class="text-center align-middle">{{ $recipe->public }}</td>
-                        <td class="text-center align-middle">
+                        <td class="">
                             <ul>
                                 @foreach($recipe->ingredients as $ingredient)
                                     <li>{{ $ingredient->pivot->quantity }} {{ $ingredient->pivot->unit }} {{ $ingredient->name }}</li>
@@ -61,7 +61,7 @@
 
     <hr>
     <section class="row justify-content-center">
-        <div class="col-sm-12 col-md-8 m-2">
+        <div class="col-sm-12 col-md-10 m-2">
             <a class="btn btn-primary m-2" href="{{ route('private.home') }}">
                 Vissza
             </a>

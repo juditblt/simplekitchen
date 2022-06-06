@@ -38,8 +38,10 @@ class PrivateController extends Controller
 
     // az adott recept adatai a szerkesztés nézeten
     public function edit($id){
+        $user = Auth::user();
         $recipe = Recipe::find($id);
         return view('private.edit', [
+            'user' => $user,
             'recipe' => $recipe
         ]);
     }
@@ -49,7 +51,7 @@ class PrivateController extends Controller
         $recipe = Recipe::find($request->id);
         $recipe->name = $request->name;
         $recipe->description = $request->description;
-        $recipe->public = $request->public;
+        $recipe->public = $request->publ_priv;
 
         /*
         $ingredient = $recipe->ingredients;
