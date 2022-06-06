@@ -25,7 +25,7 @@
                     <th>Kategória név</th>
                     <th>Recept név</th>
                     <th>Leírás</th>
-                    <th class="text-center">Publ(1)/Priv(0)</th>
+                    <th class="text-center">Priv(0)/Publ(1)</th>
                     <th class="text-center">Hozzávalók</th>
                     <th class="text-center">Szerkesztés</th>
                     <th class="text-center">Törlés</th>

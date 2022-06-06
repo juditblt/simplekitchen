@@ -27,7 +27,7 @@
                 <tr>
                     <th>Kategória név</th>
                     <th>Recept név</th>
-                    <th class="text-center">Publ(1)/Priv(0)</th>
+                    <th class="text-center">Priv(0)/Publ(1)</th>
                     <th class="text-center">Részletek</th>
                 </tr>
                 @foreach($recipes as $recipe)
