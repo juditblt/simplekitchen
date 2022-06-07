@@ -9,12 +9,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    // az alkalmazás felhasználóinak listázása a users nézeten
     public function index(){
         return view('admin.users', [
             'users' => User::all()
         ]);
     }
 
+    // előléptetés adminná (feltétel a users.blade-n)
     public function promote(UserPromotePostRequest $request){
         $user = User::find($request->id);
         $user->role = 'admin';
@@ -22,6 +24,7 @@ class UserController extends Controller
         return redirect()->route('admin.users');
     }
 
+    // user törlése a receptjeivel együtt
     public function delete(UserDeletePostRequest $request){
         $user = User::find($request->id);
         $user->delete();
