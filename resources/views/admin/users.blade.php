@@ -10,7 +10,7 @@
                 <tr>
                     <th>Név</th>
                     <th>Email</th>
-                    <th class="text-center">Role</th>
+                    <th class="text-center">Jogosultság</th>
                     <th class="text-center">Adminná előléptet</th>
                     <th class="text-center">Felhasználó törlése</th>
                 </tr>
@@ -20,11 +20,13 @@
                     <td class="align-middle">{{ $user->email }}</td>
                     <td class="text-center align-middle">{{ $user->role }}</td>
                     <td class="text-center align-middle">
+                        @if($user->role == 'user')
                         <form action="{{ route('admin.users.promote') }}" method="post">
                             @csrf
                             <input type="hidden" name="id" value="{{ $user->id }}">
                             <input class="btn btn-warning btn-sm" type="submit" value="Előléptet">
                         </form>
+                        @endif
                     </td>
                     <td class="text-center align-middle">
                         <form action="{{ route('admin.users.delete') }}" method="post">
