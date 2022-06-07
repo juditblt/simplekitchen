@@ -8,30 +8,25 @@
 
             <table class="table table-sm">
                 <tr>
-                    <th></th>
                     <th>Étel neve</th>
-                    <th></th>
                     <th>Leírás</th>
-                    <th></th>
                     <th>Hozzávalók</th>
                 </tr>
-                    <tr>
-                        <td></td>
-                        <td>{{ $recipe->name }}</td>
-                        <td></td>
-                        <td>{{ $recipe->description }}</td>
-                        <td></td>
-                        <td>
-                            <ul>
-                                @foreach($recipe->ingredients as $ingredient)
-                                    <li>{{ $ingredient->pivot->quantity }} {{ $ingredient->pivot->unit }} {{ $ingredient->name }}</li>
-                                @endforeach
-                            </ul>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>{{ $recipe->name }}</td>
+                    <td class="text-break">{{ $recipe->description }}</td>
+                    <td>
+                        <ul>
+                            @foreach($recipe->ingredients as $ingredient)
+                                <li>{{ $ingredient->pivot->quantity }} {{ $ingredient->pivot->unit }} {{ $ingredient->name }}</li>
+                            @endforeach
+                        </ul>
+                    </td>
+                </tr>
             </table>
         </div>
     </section>
+
     <hr>
     <section class="row">
         <div class="col-sm-12 col-md-8 m-2">
