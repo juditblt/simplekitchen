@@ -27,6 +27,7 @@
         </div>
     </section>
 
+    <hr>
     <section class="row justify-content-center">
         <div class="col-sm-12 col-md-10 m-2">
             <a class="btn btn-primary m-2" href="{{ route('private.home') }}">
