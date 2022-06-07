@@ -25,6 +25,8 @@ class UserController extends Controller
     public function delete(UserDeletePostRequest $request){
         $user = User::find($request->id);
         $user->delete();
+        $recipe = $user->recipes();
+        $recipe->delete();
         return redirect()->route('admin.users');
     }
 }
