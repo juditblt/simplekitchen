@@ -4,7 +4,6 @@
     <hr>
     <section class="row justify-content-center">
         <div class="col-sm-12 col-md-8">
-
             <table class="table table-sm">
                 <tr>
                     <td class="text-center align-middle">A 'simplekitchen' alkalmazás felhasználói</td>
@@ -25,7 +24,15 @@
                     </td>
                 </tr>
             </table>
-
         </div>
     </section>
+
+    <section class="row justify-content-center">
+        <div class="col-sm-12 col-md-10 m-2">
+            <a class="btn btn-primary m-2" href="{{ route('private.home') }}">
+                Vissza
+            </a>
+        </div>
+    </section>
+
 @endsection
