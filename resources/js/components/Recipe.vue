@@ -1,15 +1,7 @@
 <template>
-    <h3>A kiválasztott recept leírása</h3>
-    <table class="table table-sm">
-        <tr>
-            <th>Étel neve</th>
-            <th>Leírás</th>
-        </tr>
-        <tr>
-            <td>{{ recipe.name }}</td>
-            <td class="text-break">{{ recipe.description }}</td>
-        </tr>
-    </table>
+    <h3 class="text-center text-decoration-underline">{{ recipe.name }}</h3>
+    <p class="fs-5 fst-italic">Elkészítés:</p>
+    <p>{{ recipe.description }}</p>
 </template>
 
 <script>

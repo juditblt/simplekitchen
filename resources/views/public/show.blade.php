@@ -2,17 +2,22 @@
 
 @section('content')
     <hr>
-    <section class="row justify-content-center">
-        <div id="app" class="col-sm-12 col-md-6">
+    <section id="app" class="row justify-content-center">
+        <div class="col-sm-12 col-md-6">
 
             <recipe :recipe="{{ $recipe }}"></recipe>
 
-            <p class="fs-5">Hozzávalók:</p>
+            <p class="fs-5 fst-italic">Hozzávalók:</p>
             <ul>
             @foreach($recipe->ingredients as $ingredient)
                 <li>{{ $ingredient->pivot->quantity }} {{ $ingredient->pivot->unit }} {{ $ingredient->name }}</li>
             @endforeach
             </ul>
+        </div>
+
+        <hr>
+        <div class="col-sm-12 col-md-8 m-2">
+            <other-recipe></other-recipe>
         </div>
     </section>
 
