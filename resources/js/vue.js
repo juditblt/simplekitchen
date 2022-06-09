@@ -1,7 +1,7 @@
-import Proba from "./components/Proba.vue";
+import Recipe from "./components/Recipe.vue";
 
 export default {
     components: {
-        Proba
+        Recipe
     }
 }

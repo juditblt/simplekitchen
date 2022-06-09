@@ -2,11 +2,7 @@
 
 @section('content')
     <hr>
-    <section class="row justify-content-center">
-        <div class="col-sm-12 col-md-10" id="app">
-            <proba></proba>
-        </div>
-    </section>
+
     <section class="row justify-content-center">
         <div class="col-sm-12 col-md-5 offset-md-1">
             <h3>Az oldalon elérhető receptek</h3>
