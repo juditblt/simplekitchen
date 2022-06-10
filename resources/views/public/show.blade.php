@@ -7,7 +7,7 @@
 
             <recipe :recipe="{{ $recipe }}"></recipe>
 
-            <p class="fs-5 fst-italic">Hozzávalók:</p>
+            <p class="fs-5 fst-italic text-decoration-underline">Hozzávalók:</p>
             <ul>
             @foreach($recipe->ingredients as $ingredient)
                 <li>{{ $ingredient->pivot->quantity }} {{ $ingredient->pivot->unit }} {{ $ingredient->name }}</li>
@@ -16,7 +16,7 @@
         </div>
 
         <hr>
-        <div class="col-sm-12 col-md-8 m-2">
+        <div class="col-sm-12 col-md-6 m-2">
             <other-recipe></other-recipe>
         </div>
     </section>
