@@ -20,7 +20,7 @@
         <div class="col-sm-12 col-md-10 m-2">
             <h3>A kiválasztott recept részletei:</h3>
 
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive">
                 <tr>
                     <th>Kategória név</th>
                     <th>Recept név</th>

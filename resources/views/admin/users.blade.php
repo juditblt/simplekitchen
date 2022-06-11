@@ -6,7 +6,7 @@
         <div class="col-sm-12 col-md-8">
             <h3>A 'simplekitchen' alkalmazás felhasználói</h3>
 
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive">
                 <tr>
                     <th>Név</th>
                     <th>Email</th>

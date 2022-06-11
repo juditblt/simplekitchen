@@ -13,7 +13,7 @@
 </head>
 <body>
     <main class="container">
-        <h1 class="row justify-content-center m-3">Egyszerű receptek</h1>
+        <h1 class="text-center">Egyszerű receptek</h1>
 
         <nav class="row justify-content-center m-3">
             <ul class="nav">

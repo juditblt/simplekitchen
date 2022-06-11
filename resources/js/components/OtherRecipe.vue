@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h3 class="text-center text-decoration-underline">
-            Íme egy random recept angolul:
-        </h3>
+        <h4 class="text-center text-danger text-decoration-underline text-uppercase fst-italic rounded m-3">
+            Egy random recept angolul:
+        </h4>
         <br>
-        <table class="table table-sm">
+        <table class="table table-sm text-center table-responsive">
             <tr>
                 <th>Kategória:</th>
                 <th>Nemzetiség:</th>

@@ -3,10 +3,10 @@
 @section('content')
     <hr>
     <section id="app" class="row justify-content-center">
-        <div class="col-sm-12 col-md-6">
 
-            <recipe :recipe="{{ $recipe }}"></recipe>
+        <recipe :recipe="{{ $recipe }}"></recipe>
 
+        <div class="col-sm-12 col-md-4">
             <p class="fs-5 fst-italic text-decoration-underline">Hozzávalók:</p>
             <ul>
             @foreach($recipe->ingredients as $ingredient)
@@ -16,7 +16,7 @@
         </div>
 
         <hr>
-        <div class="col-sm-12 col-md-6 m-2">
+        <div class="col-sm-12 col-md-8">
             <other-recipe></other-recipe>
         </div>
     </section>

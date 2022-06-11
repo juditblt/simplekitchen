@@ -4,7 +4,7 @@
     <hr>
     <section class="row justify-content-center">
         <div class="col-sm-12 col-md-8">
-            <table class="table table-sm">
+            <table class="table table-sm table-responsive">
                 <tr>
                     <td class="text-center align-middle">A 'simplekitchen' alkalmazás felhasználói</td>
                     <td class="text-center align-middle">
